@@ -1,0 +1,33 @@
+ALGORITHM checkpoint
+// algorithme 
+ VAR
+ c: CHAR
+ longueur: ENTIER := 0
+ nb_mots: ENTIER := 1
+ nb_voyelles: ENTIER := 0
+
+ BEGIN
+  ECRIRE "Entrez une phrase qui se termine par un point : "
+  TANT QUE c <> "." FAIRE
+    LIRE c
+    TANT QUE c <> "." FAIRE
+      longueur := longueur + 1
+
+      // Verifier si c'est une voyelle
+      SI c = "a" OU c = "e" OU c = "i" OU c = "o" OU c = "u" ALORS
+        nb_voyelles := nb_voyelles + 1
+      FIN SI
+
+   // Verifier si c'est un espace
+      SI c = " " ALORS
+        nb_mots := nb_mots + 1
+      FIN SI
+
+      LIRE c
+    FIN TANT QUE
+
+//Résultats
+ECRIRE "Longueur de la phrase : ", longueur 
+ECRIRE "Nombre de mots : ", nb_mots
+ECRIRE "Nombre de voyelles : ", nb_voyelles
+FIN
